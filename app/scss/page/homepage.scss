@@ -1,3 +1,193 @@
-.test {
-	color: red;
+@import "../utility";
+
+:root {
+	--paddingSides-content: 40px;
+	@include breakpoint-down(medium) {
+		--paddingSides-content: 20px;
+	}
+}
+
+.app {
+	display: flex;
+}
+
+.nav {
+	background-color: #191718;
+
+	&__link {
+		position: relative;
+		display: block;
+		min-width: 150px;
+		padding: 14px 0 11px 16px;
+		font-size: 16px;
+		font-weight: 700;
+		color: #aaaaaa;
+		line-height: 18.75px;
+
+		&::before {
+			content: "";
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			width: 100%;
+			height: 2px;
+			background-color: #5c5c5c;
+		}
+
+		&.active {
+			background: #5c5c5c;
+			color: #fff;
+			border-bottom: none;
+		}
+
+		&.home {
+			color: #fff;
+		}
+	}
+}
+
+.main {
+	padding-top: 20px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	padding: 20px var(--paddingSides-content);
+
+	&__logo {
+		width: 310px;
+		height: 122px;
+		margin-bottom: 30px;
+
+		& > img {
+			object-fit: contain;
+			max-width: 100%;
+			max-height: 100%;
+		}
+
+		@include breakpoint-down(small) {
+			height: 68px;
+			width: auto;
+		}
+	}
+
+	&__content {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		text-align: center;
+		padding: 38px 0;
+		margin-bottom: 40px;
+		background: #efefef;
+		@include breakpoint-down(small) {
+			padding: 16px 0;
+			text-align: unset;
+		}
+
+		.content {
+			&__heading {
+				font-weight: bold;
+				font-size: 18px;
+				line-height: 21px;
+				text-align: center;
+				margin-bottom: 18px;
+
+				@include breakpoint-down(small) {
+					font-size: 16px;
+				}
+			}
+
+			&__paragraph {
+				font-size: 16px;
+				line-height: 19px;
+				max-width: 80%;
+
+				@include breakpoint-mid() {
+					font-size: 14px;
+				}
+
+				@include breakpoint-down(small) {
+					font-size: 12px;
+				}
+			}
+		}
+	}
+
+	&__articles {
+		display: flex;
+		align-items: center;
+		gap: 50px;
+
+		@include breakpoint-down(medium) {
+			flex-direction: column;
+			gap: 16px;
+		}
+
+		.article {
+			&__heading {
+				font-size: 24px;
+				line-height: 28px;
+				margin-bottom: 18px;
+
+				@include breakpoint-down(medium) {
+					font-size: 16px;
+					margin-bottom: 12;
+				}
+			}
+
+			&__icon {
+				width: 128px;
+				margin-right: 16px;
+				float: left;
+
+				& > img {
+					object-fit: contain;
+					max-width: 100%;
+					max-height: 100%;
+				}
+
+				@include breakpoint-mid() {
+					width: 112px;
+				}
+
+				@include breakpoint-down(small) {
+					width: 98px;
+				}
+			}
+
+			&__paragraph {
+				font-size: 16px;
+				line-height: 19px;
+
+				@include breakpoint-mid() {
+					font-size: 14px;
+				}
+
+				@include breakpoint-down(small) {
+					font-size: 12px;
+				}
+			}
+		}
+	}
+}
+
+.footer {
+	border-top: 1px solid #5c5c5c;
+	margin-top: 48px;
+
+	&__copyRight {
+		padding: 30px var(--paddingSides-content);
+		font-size: 16px;
+		line-height: 19px;
+		color: #3e3e3e;
+
+		@include breakpoint-mid() {
+			font-size: 14px;
+		}
+
+		@include breakpoint-down(small) {
+			padding: 16px var(--paddingSides-content);
+			font-size: 12px;
+		}
+	}
 }

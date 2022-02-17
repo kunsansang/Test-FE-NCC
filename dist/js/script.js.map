@@ -1,0 +1,1 @@
+{"version":3,"sources":["script.js"],"names":["$","document","querySelector","bind","$$","querySelectorAll"],"mappings":"AAAA,MAAAA,EAAAC,SAAAC,cAAAC,KAAAF,UACAG,GAAAH,SAAAI,iBAAAF,KAAAF","file":"script.js","sourcesContent":["const $ = document.querySelector.bind(document);\r\nconst $$ = document.querySelectorAll.bind(document);\r\n"]}
